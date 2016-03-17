@@ -1,0 +1,28 @@
+{% extends "registeration/base.html" %}
+
+{% block body_block %}
+
+<h2>List of Eventss:</h2>
+<div class="hero-unit">
+	<form>
+	{% for event in events%}
+		<div>
+			<strong> {{ event.name }} </strong>
+			<p> {{ event.event_description }} </p>
+			<p> xx -- {{ event.participants.all }} </p>
+			fvkndlkvnlkcn lkcn lc 
+			<p> Contact: {{ event.event_coordi }} ({{ event.contact_id_coordinator}}) </p>
+
+			<!-- {% if event.participants %} -->
+				{% for field in event.participants.all %}
+				<p> {{ field.user.username }} p</p>
+				{% endfor %}
+			<!-- {% endif %} -->
+
+		</div>
+		<br>
+	{% endfor %}
+	</form>
+</div>
+
+{% endblock %}
